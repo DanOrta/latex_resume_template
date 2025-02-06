@@ -3,7 +3,7 @@
 This is a template created in LaTeX free to use (it comes with a MIT License). The first release (v1.0.0) only works on **Linux**.
 
 ## Required packages
-To create the pdf (in Arch Linux) you will need these packages:
+To create the pdf (on Arch Linux) you will need these packages:
 
 1. texlive-basic
 2. texlive-bibtexextra
