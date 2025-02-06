@@ -1,0 +1,129 @@
+% MIT License
+
+% Copyright (c) 2025 Daniel Orta
+
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+%
+% Visit my GitHub page: https://github.com/DanOrta
+
+\documentclass[letterpaper,11pt]{article}
+
+% Personal Info:
+\def\fullName{John Doe}
+\def\email{john.doe@email.com}
+
+% Include necessary packages
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{titlesec}
+
+% Define section and subsection styles
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section}{0pt}{*1}{*0}
+\titlespacing*{\subsection}{0pt}{*1}{*0}
+
+% Adjust paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.25\baselineskip}
+\pagestyle{empty}
+
+% Define custom sections
+\newcommand{\myName}
+{
+    \textbf{\LARGE \MakeUppercase{\fullName}}\par
+}
+
+\newcommand{\phoneNumber}[1]
+{
+    Phone number: \textbf{#1}\\
+}
+
+\newcommand{\emailField}
+{
+    Email: \textbf{\email}\\\par
+}
+
+\newcommand{\residence}[3]
+{
+    Place of residence: #1, #2 (#3)
+}
+
+\newcommand{\ressection}[4]{
+    \vspace{12pt}
+	% #1 Is the job's title and #2 the company's name'
+	\MakeUppercase{{\large\bfseries #1\hfill #2}}\par 
+	\vspace{-4pt}
+	% #3 is the job's geographical location and #4 is the date
+	\textit{{\footnotesize\bfseries #3\hfill\MakeUppercase{#4}}}\par
+	\vspace{6pt}
+}
+
+\begin{document}
+
+% %%%%%%%%%% HEADER %%%%%%%%%%
+\begin{minipage}{0.7\textwidth}
+    \myName{}
+    \phoneNumber{+10000000000}
+    \emailField{}
+    \residence{City}{State}{Country}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+	\hfill\includegraphics[width=0.5\textwidth]{profilePicture.png}
+\end{minipage}
+
+% Gradient / separator
+% %%%%%%%%%%
+
+% %%%%%%%%%% PROFESSIONAL EXPERIENCE %%%%%%%%%%
+\phantom{.}\\
+\textbf{{\Large {\MakeUppercase{Professional Experience}}}}\par
+
+% %%%%% Latest job experience
+\ressection{Job title \# 1}{Company A}{City, State}{Jan 2025 - Present}
+\lipsum[1]\par % Replace with your information
+\lipsum[2][1]:
+\begin{itemize}
+    \item \lipsum[2][2]
+    \item \lipsum[2][3]
+    \item \lipsum[2][4]
+\end{itemize}
+
+% %%%%% Second to latest job experience ... and so on
+\ressection{Job title \# 2}{Company B}{City, State}{JAN 2015 - jAn 2025}
+\lipsum[4][1-10]\par
+\lipsum[5]\\
+
+% %%%%%%%%%% EDUCATION %%%%%%%%%%
+\textbf{{\Large {\MakeUppercase{Professional Education}}}}\par
+\ressection{Master's Degree}{University or College}{City, State}{2013 - 2015}
+\lipsum[6]\\
+
+\ressection{Bachelor Degree}{University or College}{City, State}{2008 - 2013}
+\lipsum[7]\\
+
+
+\textbf{{\Large {\MakeUppercase{certifications}}}}\\\par
+\textbf{Certification Name \#1:} Certification ID, reference or link.\par
+\textbf{Certification Name \#2:} Certification ID, reference or link.\par
+\textbf{Certification Name \#3:} Certification ID, reference or link.\par
+\textbf{Certification Name \#4:} Certification ID, reference or link.\\
+
+\end{document}
