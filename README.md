@@ -1,6 +1,9 @@
-# LaTeX resume template
+# $\mathrm{\LaTeX}$ resume template
 
-This is a template created in LaTeX free to use (it comes with a MIT License). The first release (v1.0.0) only works on **Linux**.
+This is a very simple and free template created in $\mathrm{\LaTeX}$ (it comes with a MIT License). So far, this template can only be created on Linux, but is easy to port to other operating systems.
+
+## Preview
+![*Resume preview.*](preview.jpg)
 
 ## Required packages
 To create the pdf (on Arch Linux) you will need these packages:
@@ -34,17 +37,18 @@ To create the pdf (on Arch Linux) you will need these packages:
 
 For other distros or operating systems, you can create a PR to add the missing information, otherwise it will take me some time to port it at least to Windows.
 
-## Creation of the pdf
+## PDF Generation
 To create the pdf, I made it really simple. In your terminal you only need to type:
-````
-make
-````
+```console
+$ make
+```
 And that's it! Just make sure you are in the same folder as your git repo.
 
 ### Makefile
 In summary, a Makefile is a file that contains the instructions to create another file. As I mentioned before, `make` is the command to create the pdf. It will only generate a new pdf when either the profile picture, or the tex file gets updated.
 
-> Note: if you want to rename one or both files, do it also in the Makefile (line 2 and 4).
+> [!NOTE]  
+> If you want to rename one or both files, do it also in the Makefile (line 2 and 4).
 
 Other commands available are:
 
