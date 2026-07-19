@@ -1,7 +1,7 @@
 % MIT License
-
-% Copyright (c) 2025 Daniel Orta
-
+%
+% Copyright (c) 2025-2026 DanOrta
+%
 % Permission is hereby granted, free of charge, to any person obtaining a copy
 % of this software and associated documentation files (the "Software"), to deal
 % in the Software without restriction, including without limitation the rights
@@ -22,7 +22,7 @@
 %
 % Visit my GitHub page: https://github.com/DanOrta
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 % Personal Info:
 \def\fullName{John Doe}
@@ -30,35 +30,31 @@
 
 % Include necessary packages
 \usepackage[margin=0.75in]{geometry}
-\usepackage{graphicx}
-\usepackage{lipsum}
-\usepackage{titlesec}
+\usepackage{graphicx, enumitem, lipsum, microtype, titlesec}
 
 % Define section and subsection styles
-\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}[\titlerule]
-\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
-\titlespacing*{\section}{0pt}{*1}{*0}
-\titlespacing*{\subsection}{0pt}{*1}{*0}
+\titleformat{\section}{\Large\bfseries}{}{0em}{\MakeUppercase}[\titlerule]
+\titleformat{\subsection}{\large\bfseries}{}{0em}{\MakeUppercase}
 
 % Adjust paragraph indentation
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0.25\baselineskip}
+%\setlength{\parskip}{0.25\baselineskip}
 \pagestyle{empty}
 
 % Define custom sections
 \newcommand{\myName}
 {
-    \textbf{\LARGE \MakeUppercase{\fullName}}\par
+    \textbf{\LARGE\MakeUppercase{\fullName}}
 }
 
 \newcommand{\phoneNumber}[1]
 {
-    Phone number: \textbf{#1}\\
+    Phone number: \textbf{#1}
 }
 
 \newcommand{\emailField}
 {
-    Email: \textbf{\email}\\\par
+    Email: \textbf{\email}
 }
 
 \newcommand{\residence}[3]
@@ -66,64 +62,79 @@
     Place of residence: #1, #2 (#3)
 }
 
-\newcommand{\ressection}[4]{
-    \vspace{12pt}
-	% #1 Is the job's title and #2 the company's name'
-	\MakeUppercase{{\large\bfseries #1\hfill #2}}\par 
-	\vspace{-4pt}
-	% #3 is the job's geographical location and #4 is the date
-	\textit{{\footnotesize\bfseries #3\hfill\MakeUppercase{#4}}}\par
-	\vspace{6pt}
+\newcommand{\jobDetails}[4]
+{
+    {\bfseries#1}
+
+    \textit{#2, #3~\hfill#4}
+
+    \vspace{5pt}
 }
 
-\begin{document}
+% If you are planning on using a custom font, remove the line below and instead,
+% add the package 'fontspec' and replace the TeX engine from 'pdflatex' to 'xelatex'
+% or 'lualatex'
+\renewcommand{\familydefault}{phv}
+\setlist[itemize]{noitemsep}
 
+\begin{document}
 % %%%%%%%%%% HEADER %%%%%%%%%%
 \begin{minipage}{0.7\textwidth}
-    \myName{}
-    \phoneNumber{+10000000000}
-    \emailField{}
-    \residence{City}{State}{Country}
-\end{minipage}
-\begin{minipage}{0.3\textwidth}
-	\hfill\includegraphics[width=0.5\textwidth]{profilePicture.png}
-\end{minipage}
+    \myName
 
-% Gradient / separator
-% %%%%%%%%%%
+    \phoneNumber{+10000000000}
+
+    \emailField
+
+    \vspace{10pt}\residence{City}{State}{Country}
+\end{minipage}
+\vspace{5pt}\begin{minipage}{0.3\textwidth}
+	\hfill\includegraphics[width=0.4\textwidth]{profilePicture.png}
+\end{minipage}
+\rule{\textwidth}{1pt}
 
 % %%%%%%%%%% PROFESSIONAL EXPERIENCE %%%%%%%%%%
-\phantom{.}\\
-\textbf{{\Large {\MakeUppercase{Professional Experience}}}}\par
+
+%\textbf{{\Large{\MakeUppercase{Professional Experience}}}}
+\section{Professional Experience}
 
 % %%%%% Latest job experience
-\ressection{Job title \# 1}{Company A}{City, State}{Jan 2025 - Present}
-\lipsum[1]\par % Replace with your information
-\lipsum[2][1]:
+\subsection{Job Title \#1}
+\jobDetails{Company A}{City}{State}{Jan 2025 - Present}
+ % Replace with your information
+\lipsum[1][1-4]
+
 \begin{itemize}
-    \item \lipsum[2][2]
+    \item \lipsum[2][1-2]
     \item \lipsum[2][3]
     \item \lipsum[2][4]
 \end{itemize}
 
 % %%%%% Second to latest job experience ... and so on
-\ressection{Job title \# 2}{Company B}{City, State}{JAN 2015 - jAn 2025}
-\lipsum[4][1-10]\par
-\lipsum[5]\\
+\subsection{Job Title \#2}
+\jobDetails{Company B}{City}{State}{Jan 2015 - Jan 2025}
+\lipsum[5][1-4]
+
+\begin{itemize}
+    \item \lipsum[5][5]
+    \item \lipsum[5][6-7]
+    \item \lipsum[5][8-10]
+\end{itemize}
 
 % %%%%%%%%%% EDUCATION %%%%%%%%%%
-\textbf{{\Large {\MakeUppercase{Professional Education}}}}\par
-\ressection{Master's Degree}{University or College}{City, State}{2013 - 2015}
-\lipsum[6]\\
+\section{Professional Education}
 
-\ressection{Bachelor Degree}{University or College}{City, State}{2008 - 2013}
-\lipsum[7]\\
+\subsection{Master's Degree}
+\jobDetails{University Name}{City}{State}{2013 - 2015}
+\lipsum[6][6-9]
 
+\subsection{Bachelor Degree}
+\jobDetails{University Name}{City}{State}{2008 - 2013}
+\lipsum[7][1-9]
 
-\textbf{{\Large {\MakeUppercase{certifications}}}}\\\par
-\textbf{Certification Name \#1:} Certification ID, reference or link.\par
-\textbf{Certification Name \#2:} Certification ID, reference or link.\par
-\textbf{Certification Name \#3:} Certification ID, reference or link.\par
-\textbf{Certification Name \#4:} Certification ID, reference or link.\\
+\section{Certifications}
+\textbf{Certification Name \#1:} Certification ID, reference or link.
+
+\textbf{Certification Name \#2:} Certification ID, reference or link.
 
 \end{document}

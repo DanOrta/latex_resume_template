@@ -1,6 +1,8 @@
-# $\mathrm{\LaTeX}$ resume template
+# LaTeX resume template
 
-This is a very simple and free template created in $\mathrm{\LaTeX}$ (it comes with a MIT License). So far, this template can only be created on Linux, but is easy to port to other operating systems.
+This is a very simple, free and ATS friendly $\mathrm{\LaTeX}$ template (it comes with a MIT License).
+
+So far, this template can only be created on Linux, but is easy to port to other operating systems.
 
 ## Preview
 ![*Resume preview.*](preview.jpg)
@@ -8,34 +10,17 @@ This is a very simple and free template created in $\mathrm{\LaTeX}$ (it comes w
 ## Required packages
 To create the pdf (on Arch Linux) you will need these packages:
 
-1. texlive-basic
-2. texlive-bibtexextra
-3. texlive-bin
-4. texlive-binextra
-5. texlive-context
-6. texlive-fontsextra
-7. texlive-fontsrecommended
-8. texlive-fontutils
-9. texlive-formatsextra
-10. texlive-games
-11. texlive-humanities
-12. texlive-langfrench
-13. texlive-latex
-14. texlive-latexextra
-15. texlive-latexrecommended
-16. texlive-luatex
-17. texlive-mathscience
-18. texlive-meta
-19. texlive-metapost
-20. texlive-music
-21. texlive-pictures
-22. texlive-plaingeneric
-23. texlive-pstricks
-24. texlive-publishers
-25. texlive-xetex
-26. make
+```console
+$ sudo pacman -Syu texlive-basic texlive-bibtexextra texlive-bin texlive-binextra \
+texlive-context texlive-fontsextra texlive-fontsrecommended texlive-fontutils \
+texlive-formatsextra texlive-humanities texlive-langfrench texlive-latex texlive-latexextra \
+texlive-latexrecommended texlive-luatex texlive-mathscience texlive-meta \
+texlive-metapost texlive-music texlive-pictures texlive-plaingeneric texlive-pstricks \
+texlive-publishers texlive-xetex make
+```
 
-For other distros or operating systems, you can create a PR to add the missing information, otherwise it will take me some time to port it at least to Windows.
+> [!NOTE]  
+> For other distros or operating systems, you can create a PR to add the missing information, otherwise it will take me some time to port it at least to Windows.
 
 ## PDF Generation
 To create the pdf, I made it really simple. In your terminal you only need to type:
@@ -53,7 +38,7 @@ In summary, a Makefile is a file that contains the instructions to create anothe
 Other commands available are:
 
 * `make clean` will remove all the 'extra' files (created alongside the pdf) and pdf itself.
-* `make rebuild` will do the same thing as `make clean` and additionaly it will rebuild the pdf. You will use this command when `make` fails to recognize your changes (which doesn't happen that often).
+* `make rebuild` will do the same thing as `make clean` and additionally it will rebuild the pdf. You will use this command when `make` fails to recognize your changes (which doesn't happen that often).
 
 ## Final thoughts
 If you have any problems or suggestions, please submit an issue.
